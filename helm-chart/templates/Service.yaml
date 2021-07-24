@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-helloworld-service
+  labels:
+    app: python-helloworld
+  namespace: default
+spec:
+  selector:
+    app: python-helloworld
+  type: NodePort
+  ports:
+  - port: 8082
+    targetPort: 5000
+    nodePort: {{ .Values.service.nodePort }}
+    protocol: TCP
