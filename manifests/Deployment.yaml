@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: python-helloworld
-        image: tutug/python-helloworld:latest
+        image: tutug/python-helloworld:0.2
         ports:
         - protocol: TCP
           containerPort: 5000
