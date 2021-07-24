@@ -24,15 +24,15 @@ spec:
         image: tutug/python-helloworld:latest
         ports:
         - protocol: TCP
-          containerPort: 6111
+          containerPort: 5000
         livenessProbe:
           httpGet:
             path: /
-            port: 6111
+            port: 5000
         readinessProbe:
           httpGet:
             path: /
-            port: 6111
+            port: 5000
         resources:
           requests:
             memory: "64Mi"
