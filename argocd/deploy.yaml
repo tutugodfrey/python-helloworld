@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+
+kind: Application
+
+metadata:
+  name: python-helloworld
+  namespace: argocd
+
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+
+  project: default
+
+  source:
+    path: helm-chart
+    repoURL: https://github.com/tutugodfrey/python-helloworld
+    targetRevision: HEAD
+  syncPolicy: {}
