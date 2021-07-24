@@ -10,7 +10,7 @@ spec:
     app: python-helloworld
   type: NodePort
   ports:
-  - port: 8081
-    targetPort: 6111
-    nodePort: 31224
+  - port: 8082
+    targetPort: 5000
+    nodePort: 31225
     protocol: TCP
