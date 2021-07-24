@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-helloworld
+  namespace: default
+  labels:
+    app: python-helloworld
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-helloworld
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: python-helloworld
+    spec:
+      containers:
+      - name: python-helloworld
+        image: tutug/python-helloworld
+        ports:
+        - protocol: TCP
+          containerPort: 6111
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 6111
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 6111
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
