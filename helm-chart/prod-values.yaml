@@ -1,0 +1,13 @@
+# Set namespace
+
+namespace:
+  name: prod
+
+image:
+  repository: tutug/python-helloworld
+  tag: v2
+
+replicaCount: 3
+
+service:
+  nodePort: 30020
