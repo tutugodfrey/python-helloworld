@@ -14,7 +14,7 @@ spec:
   project: default
 
   source:
-    path: manifests
+    path: helm-chart
     repoURL: https://github.com/tutugodfrey/python-helloworld
     targetRevision: HEAD
   syncPolicy: {}
